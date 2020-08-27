@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.davidinnocent.ajs.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            app:popUpTo="@id/navigation"
+            android:id="@+id/action_loginFragment_to_roleFragment"
+            app:destination="@id/roleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.davidinnocent.ajs.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            app:popUpTo="@id/navigation"
+            android:id="@+id/action_signUpFragment_to_roleFragment"
+            app:destination="@id/roleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roleFragment"
+        android:name="com.davidinnocent.ajs.RoleFragment"
+        android:label="fragment_role"
+        tools:layout="@layout/fragment_role" >
+        <action
+            android:id="@+id/action_roleFragment_to_casesHomeFragment"
+            app:destination="@id/casesHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/casesHomeFragment"
+        android:name="com.davidinnocent.ajs.CasesHomeFragment"
+        android:label="fragment_cases_home"
+        tools:layout="@layout/fragment_cases_home" >
+        <action
+            android:id="@+id/action_casesHomeFragment_to_lawyerFragment"
+            app:destination="@id/lawyerFragment" />
+        <action
+            android:id="@+id/action_casesHomeFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+        <argument
+            android:name="UserType"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lawyerFragment"
+        android:name="com.davidinnocent.ajs.LawyerFragment"
+        android:label="fragment_lawyer"
+        tools:layout="@layout/fragment_lawyer" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.davidinnocent.ajs.AdminFragment"
+        android:label="fragment_admin"
+        tools:layout="@layout/fragment_admin" />
+</navigation>
